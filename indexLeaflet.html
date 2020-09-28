@@ -46,6 +46,11 @@
       accessToken: 'pk.eyJ1Ijoiam9uYXNhZ2FwaXRvIiwiYSI6ImNrZm1xaXAzcDB4bm0yeHA3d3p6N20wbWQifQ.32hcU2mX48lLfzHEb-ei5w'}).addTo(mapa);
     
     L.geoJSON(iluminacaoInterna).addTo(mapa);
+	  
+    function onEachFeature(feature, layer) {
+	    if (layer instanceof L.Marker) {
+		    layer.setIcon("iluminacaoInterna-agendada.png")
+	    }
 
   </script>
 </body>
