@@ -11,7 +11,7 @@
         ]
       },
       "properties": {
-        "marker-symbol": "garden",
+        "marker-icon": "iluminacaoInterna-agendada.png",
 	"marker-color": "#FFFF00",
         "name": "The Exchange",
         "address": "1719 G St NW"
