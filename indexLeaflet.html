@@ -54,7 +54,13 @@
 
 // $.getJSON('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson', function(json) {
 
-  var myLayer = L.geoJSON(iluminacaoInterna, {style: "color": "yellow"}).addTo(mapa);
+  //var myLayer = L.geoJSON(iluminacaoInterna, {style: "color": "yellow"}).addTo(mapa);
+	  
+  L.geoJSON(iluminacaoInterna, {
+	  style: function (feature) {
+          return {color: feature.properties.marker-color};
+	  }
+  }).addTo(mapa);	  
 
  // var myLayer = L.geoJSON(iluminacaoInterna, {
 
