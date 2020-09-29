@@ -59,70 +59,17 @@
   function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.status) {
-        layer.bindPopup(feature.properties.status);
+        layer.bindPopup("<br><b>Status:</b> " + feature.properties.status);
     }
 }
-
-var geojsonFeature = {
-    "type": "Feature",
-    "properties": {
-        "name": "Coors Field",
-        "amenity": "Baseball Stadium",
-        "popupContent": "This is where the Rockies play!"
-    },
-    "geometry": {
-        "type": "Point",
-        "coordinates": [-104.99404, 39.75621]
-    }
-};
-
+	  
 L.geoJSON(iluminacaoInterna, {
     onEachFeature: onEachFeature
 }).addTo(mapa);	  
 	  
   //L.geoJSON(iluminacaoInterna, {
 //	  style: meuEstilo
- //}).addTo(mapa);	  
-	  
-	  
-	  
-	  
-
- // var myLayer = L.geoJSON(iluminacaoInterna, {
-
-//    style: function(feature) {
-//      var status = feature.properties.status;
-//      if (status == "Agendada") {
-//        return {
-//          color: "yellow"
-//        }; 
-//      }
-//      else if (status == "Em executando") {
-//        return {
-//          color: "blue"
-//        };
-//      } else {
-//        return {
-//          color: "grey"
-//        }
-//      }
-//    },
-
-//    onEachFeature: function(feature, layer) {
-
-//      var popupText = "<b>Ordem de servico:</b> " + feature.properties.numero +
-//        "<br><b>Status:</b> " + feature.properties.status;
-	    
-//      layer.on('click', function() {
-//        layer.openPopup();
-//      });
-//    },
-
-//  }).addTo(mapa);
-//});
-	  
-	  
-	  
+ //}).addTo(mapa); 
 	  
 
   </script>
