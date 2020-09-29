@@ -54,40 +54,40 @@
 
 // $.getJSON('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson', function(json) {
 
-  // var myLayer = L.geoJSON(iluminacaoInterna).addTo(mapa);
+  var myLayer = L.geoJSON(iluminacaoInterna).addTo(mapa);
 
-  var myLayer = L.geoJSON(iluminacaoInterna, {
+ // var myLayer = L.geoJSON(iluminacaoInterna, {
 
-    style: function(feature) {
-      var status = feature.properties.status;
-      if (status == "Agendada") {
-        return {
-          color: "yellow"
-        }; 
-      }
-      else if (status == "Em executando") {
-        return {
-          color: "blue"
-        };
-      } else {
-        return {
-          color: "grey"
-        }
-      }
-    },
+//    style: function(feature) {
+//      var status = feature.properties.status;
+//      if (status == "Agendada") {
+//        return {
+//          color: "yellow"
+//        }; 
+//      }
+//      else if (status == "Em executando") {
+//        return {
+//          color: "blue"
+//        };
+//      } else {
+//        return {
+//          color: "grey"
+//        }
+//      }
+//    },
 
-    onEachFeature: function(feature, layer) {
+//    onEachFeature: function(feature, layer) {
 
-      var popupText = "<b>Ordem de servico:</b> " + feature.properties.numero +
-        "<br><b>Status:</b> " + feature.properties.status;
+//      var popupText = "<b>Ordem de servico:</b> " + feature.properties.numero +
+//        "<br><b>Status:</b> " + feature.properties.status;
 	    
-      layer.on('click', function() {
-        layer.openPopup();
-      });
-    },
+//      layer.on('click', function() {
+//        layer.openPopup();
+//      });
+//    },
 
-  }).addTo(mapa);
-});
+//  }).addTo(mapa);
+//});
 	  
 	  
 	  
