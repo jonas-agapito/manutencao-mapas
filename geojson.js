@@ -1,4 +1,6 @@
-var iluminacaoInterna = {"features": [
+var iluminacaoInterna = {
+"type": "FeatureCollection",
+"features": [
 { "type": "Feature", "properties": { "numero": 11285, "status": "Agendada", "aberta": "2020-03-17", "atendida": null, "encerrada": null, "centro": "CH", "setor": "Centro de Humanidades", "área": "Iluminação interna", "color": "#fff100" }, "geometry": { "type": "Point", "coordinates": [ -35.911886206839725, -7.216404930930547 ] } },
 { "type": "Feature", "properties": { "numero": 11253, "status": "Agendada", "aberta": "2020-03-13", "atendida": null, "encerrada": null, "centro": "CH", "setor": "Central de Humanidades", "área": "Iluminação Interna", "color": "#fff100" }, "geometry": { "type": "Point", "coordinates": [ -35.911335390755823, -7.216581206040059 ] } },
 { "type": "Feature", "properties": { "numero": 11295, "status": "Agendada", "aberta": "2020-03-13", "atendida": null, "encerrada": null, "centro": "CH", "setor": "Centro de Humanidades", "área": "Iluminação Interna", "color": "#fff100" }, "geometry": { "type": "Point", "coordinates": [ -35.911305753931572, -7.216701742415245 ] } },
