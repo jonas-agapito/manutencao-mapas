@@ -56,16 +56,37 @@
 
   //var myLayer = L.geoJSON(iluminacaoInterna, {style: "color": "yellow"}).addTo(mapa);
 	  
-  var meuEstilo = {
-	  "iconUrl": "bar",
-	  "color": "#ff7800",
-	  "weight": 5,
-	  "opacity": 0.65
-  };	  
+  function onEachFeature(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.popupContent) {
+        layer.bindPopup(feature.properties.popupContent);
+    }
+}
+
+var geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+        "name": "Coors Field",
+        "amenity": "Baseball Stadium",
+        "popupContent": "This is where the Rockies play!"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [-104.99404, 39.75621]
+    }
+};
+
+L.geoJSON(geojsonFeature, {
+    onEachFeature: onEachFeature
+}).addTo(mapa);	  
 	  
-  L.geoJSON(iluminacaoInterna, {
-	  style: meuEstilo
-  }).addTo(mapa);	  
+  //L.geoJSON(iluminacaoInterna, {
+//	  style: meuEstilo
+ //}).addTo(mapa);	  
+	  
+	  
+	  
+	  
 
  // var myLayer = L.geoJSON(iluminacaoInterna, {
 
