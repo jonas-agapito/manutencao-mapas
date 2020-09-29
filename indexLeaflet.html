@@ -40,11 +40,19 @@
 			zoomOffset: -1,
 			accessToken: 'pk.eyJ1Ijoiam9uYXNhZ2FwaXRvIiwiYSI6ImNrZm1xaXAzcDB4bm0yeHA3d3p6N20wbWQifQ.32hcU2mX48lLfzHEb-ei5w'}).addTo(mapa);
 		
+		var icone = L.icon({
+			//iconUrl: "https://safecomm.test.cvrsonline.com/Content/safecomm/Hazard-Identified.png",
+			iconSize: [16, 16],
+			//iconAnchor: [8, 8],
+			//popupAnchor: [0, 0]
+		});
+		
+		
 		function onEachFeature(feature, layer) {
 			if (feature.properties) {
 				layer.bindPopup("<br><b>Número da O.S.:</b> " + feature.properties.numero + "\n" + "<br><b>Status:</b> " + feature.properties.status);
 				//var IconStyleOne = L.icon({iconUrl: feature.properties.iconUrl});
-				layer.setIcon(L.icon({iconUrl: "https://github.com/jonas-agapito/manutencao-mapas/blob/gh-pages/iluminacaoInterna-agendada.png"}));
+				layer.setIcon(icone);
 				//layer.setIcon(feature.properties.iconUrl);
 			}
 		}
