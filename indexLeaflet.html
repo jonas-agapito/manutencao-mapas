@@ -47,8 +47,49 @@
     
     // L.geoJSON(iluminacaoInterna).addTo(mapa);
     
-    var myLayer = L.geoJSON().addTo(mapa);
-    myLayer.addData(iluminacaoInterna);
+    //var myLayer = L.geoJSON().addTo(mapa);
+    // myLayer.addData(iluminacaoInterna);
+	  
+	 
+
+// $.getJSON('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson', function(json) {
+
+  var myLayer = L.geoJson(iluminacaoInterna, {
+
+    style: function(feature) {
+      var status = feature.properties.status;
+      if (status == "Agendada") {
+        return {
+          color: "yellow"
+        }; 
+      }
+      else if (status == "executando") {
+        return {
+          color: "blue"
+        };
+      } else {
+        return {
+          color: "grey"
+        }
+      }
+    },
+
+    onEachFeature: function(feature, layer) {
+
+      var popupText = "<b>Ordem de servico:</b> " + feature.properties.numero +
+        "<br><b>Status:</b> " + feature.properties.status;
+	    
+      layer.on('click', function() {
+        layer.openPopup();
+      });
+    },
+
+  }).addTo(map);
+});
+	  
+	  
+	  
+	  
 
   </script>
 </body>
