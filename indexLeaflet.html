@@ -40,21 +40,21 @@
 			zoomOffset: -1,
 			accessToken: 'pk.eyJ1Ijoiam9uYXNhZ2FwaXRvIiwiYSI6ImNrZm1xaXAzcDB4bm0yeHA3d3p6N20wbWQifQ.32hcU2mX48lLfzHEb-ei5w'}).addTo(mapa);
 		
-		var icone = L.Icon.Default.prototype.options({
+		//var icone = L.Icon.Default.prototype.options({
 			//iconUrl: "iluminacaoInterna-agendada.png",
-			iconSize: [64, 128],
+			//iconSize: [64, 128],
 			//iconAnchor: [8, 8],
 			//popupAnchor: [0, 0]
 		});
 		
-		//L.Icon.Default.prototype.options.iconUrl = 'iluminacaoInterna-agendada.png';
+		L.Icon.Default.prototype.options.iconSize = [64, 128];
 		//L.Marker.prototype.options.icon = "iluminacaoInterna-agendada.png";
 		
 		function onEachFeature(feature, layer) {
 			if (feature.properties) {
 				layer.bindPopup("<br><b>Número da O.S.:</b> " + feature.properties.numero + "\n" + "<br><b>Status:</b> " + feature.properties.status);
 				//var IconStyleOne = L.icon({iconUrl: feature.properties.iconUrl});
-				layer.setIcon(icone);
+				//layer.setIcon(icone);
 				//layer.setIcon(feature.properties.iconUrl);
 			}
 		}
